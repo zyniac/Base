@@ -4,7 +4,6 @@
 
 #define SUBCOMMAND_NF "Subcommand not found"
 #define COMMAND_NF "Command not found"
-#define ARGUMENT_INDICATOR "-"
 
 void RunCmdBase(CommandHandler hCmd, int argc, char** argv) {
 	Command* cmd;
