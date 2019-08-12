@@ -22,8 +22,17 @@ class Argument {
 public:
 	Argument() = default;
 
+	enum class ArgumentValidation {
+		VALID, INVALID
+	};
+
+	ArgumentValidation validation = ArgumentValidation::VALID;
+
 	Argument(std::string mainArg)
 		: mainArg(mainArg) {}
+
+	Argument(ArgumentValidation validation)
+		: validation(validation) {}
 
 	void set(std::string string) {
 		mainArg = string;
@@ -87,10 +96,11 @@ public:
 		}
 	}
 
-	Argument& find(std::string argumentName, bool isWrittenOut) {
+	Argument find(std::string argumentName, bool isWrittenOut) {
 		for (auto argument : this->arguments) {
 			if (argument.get() == argumentName && argument.isWrittenOut() == isWrittenOut) return argument;
 		}
+		return Argument(Argument::ArgumentValidation::INVALID);
 	}
 
 	std::vector<Argument> getArguments() {
