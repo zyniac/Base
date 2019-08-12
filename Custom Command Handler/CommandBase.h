@@ -2,7 +2,6 @@
 #include "CommandHandler.h"
 #include <iostream>
 
-#define EXIT_STRING "exit"
 #define SUBCOMMAND_NF "Subcommand not found"
 #define COMMAND_NF "Command not found"
 #define ARGUMENT_INDICATOR "-"
@@ -26,10 +25,10 @@ void RunCmdBase(CommandHandler hCmd, int argc, char** argv) {
 			if (cmd != nullptr) {
 				cmd->call(args);
 			}
-			else if (input != EXIT_STRING) {
+			else {
 				std::cout << COMMAND_NF << std::endl;
 			}
-		} while (input != EXIT_STRING);
+		} while (true);
 	}
 	else if (argc > 1) {
 		std::vector<std::string> args(argv + 1, argv + argc);
@@ -43,4 +42,5 @@ void RunCmdBase(CommandHandler hCmd, int argc, char** argv) {
 			std::cout << SUBCOMMAND_NF << std::endl;
 		}
 	}
+	return;
 }
