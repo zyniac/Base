@@ -87,6 +87,12 @@ public:
 		}
 	}
 
+	Argument& find(std::string argumentName) {
+		for (auto argument : this->arguments) {
+			if (argument.get() == argumentName) return argument;
+		}
+	}
+
 	std::vector<Argument> getArguments() {
 		return this->arguments;
 	}
