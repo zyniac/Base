@@ -40,8 +40,7 @@ int main(int argc, char** argv) {
 	else if (argc > 1) {
 		std::vector<std::string> args(argv + 1, argv + argc);
 
-		CommandHandler hCmd;
-		Command* cmd = hCmd.getCommand(argv[1]);
+		Command* cmd = hCmd.getCommand(args[0].c_str());
 		if (cmd != nullptr) {
 			args.erase(args.begin(), args.begin() + 1);
 			cmd->call(args);
