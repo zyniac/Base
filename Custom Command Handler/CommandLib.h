@@ -87,9 +87,9 @@ public:
 		}
 	}
 
-	Argument& find(std::string argumentName) {
+	Argument& find(std::string argumentName, bool isWrittenOut) {
 		for (auto argument : this->arguments) {
-			if (argument.get() == argumentName) return argument;
+			if (argument.get() == argumentName && argument.isWrittenOut() == isWrittenOut) return argument;
 		}
 	}
 
