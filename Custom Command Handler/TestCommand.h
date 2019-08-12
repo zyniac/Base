@@ -7,8 +7,6 @@ public:
 	TestCommand()
 		: Command("test") {}
 
-	int test = 0;
-
 	void call(std::vector<std::string> args) override {
 		ArgumentList argList(args);
 		if (argList.noCll()) {
