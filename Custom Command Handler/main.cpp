@@ -1,6 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <string>
 #include "CommandHandler.h"
 #include "TestCommand.h"
 #include "CommandBase.h"
