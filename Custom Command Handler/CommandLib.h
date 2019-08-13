@@ -115,7 +115,9 @@ public:
 	}
 
 	Couple findBoth(const std::string& shortName, const std::string& longName) const {
-		return Couple(find(shortName, false), find(longName, true));
+		Argument arg;
+		if ((arg = find(shortName, false)).validation == Argument::ArgumentValidation::VALID) return arg;
+		if ((arg = find(longName, true)).validation == Argument::ArgumentValidation::VALID) return arg;
 	}
 
 	std::vector<Argument> getArguments() {
