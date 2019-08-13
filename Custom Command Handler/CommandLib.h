@@ -28,7 +28,7 @@ public:
 
 	ArgumentValidation validation = ArgumentValidation::VALID;
 
-	Argument(std::string mainArg)
+	Argument(const std::string& mainArg)
 		: mainArg(mainArg) {}
 
 	Argument(ArgumentValidation validation)
@@ -46,15 +46,15 @@ public:
 		return this->writtenOut;
 	}
 
-	void setArg(std::vector<std::string> lString) {
+	void setArg(const std::vector<std::string>& lString) {
 		argArg = lString;
 	}
 
-	std::string get() {
+	std::string get() const {
 		return mainArg;
 	}
 
-	std::vector<std::string> getArg() {
+	std::vector<std::string> getArg() const {
 		return argArg;
 	}
 
@@ -73,11 +73,22 @@ bool _startsWith(std::string string, std::string start) {
 
 class ArgumentList {
 public:
-	ArgumentList(std::vector<std::string> lString) {
+	inline ArgumentList(const std::vector<std::string>& lString) {
 		this->processArguments(lString);
 	}
 
-	void processArguments(std::vector<std::string> lString) {
+	static struct Couple {
+		Couple() = default;
+		Couple(Argument arg)
+			: shortArg(arg) {}
+
+		Couple(Argument arg, Argument arg2)
+			: shortArg(arg), longArg(arg) {}
+
+		Argument shortArg, longArg;
+	};
+
+	void processArguments(const std::vector<std::string>& lString) {
 		for (unsigned int i = 0; i < lString.size(); i++) {
 			if (_startsWith(lString[i], "--")) {
 				arguments.push_back(Argument(lString[i].substr(2)));
@@ -96,11 +107,15 @@ public:
 		}
 	}
 
-	Argument find(std::string argumentName, bool isWrittenOut) {
+	Argument find(std::string argumentName, bool isWrittenOut) const {
 		for (auto argument : this->arguments) {
 			if (argument.get() == argumentName && argument.isWrittenOut() == isWrittenOut) return argument;
 		}
 		return Argument(Argument::ArgumentValidation::INVALID);
+	}
+
+	Couple findBoth(const std::string& shortName, const std::string& longName) const {
+		return Couple(find(shortName, false), find(longName, true));
 	}
 
 	std::vector<Argument> getArguments() {

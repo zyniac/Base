@@ -5,7 +5,7 @@
 #define SUBCOMMAND_NF "Subcommand not found"
 #define COMMAND_NF "Command not found"
 
-void RunCmdBase(CommandHandler hCmd, int argc, char** argv) {
+void RunCmdBase(const CommandHandler& hCmd, int argc, char** argv) {
 	Command* cmd;
 
 	std::string input;

@@ -4,12 +4,13 @@
 class CommandHandler {
 public:
 	CommandHandler() {}
+	CommandHandler(const CommandHandler&) = delete;
 
 	~CommandHandler() {
 		destroyCommands();
 	}
 
-	Command* getCommand(const char* name) {
+	Command* getCommand(const char* name) const {
 		for (Command* cmd : commandList) {
 			if (name == cmd->getName())
 				return cmd;
