@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Custom Command Handler", "Custom Command Handler\Custom Command Handler.vcxproj", "{201D64F0-EB85-46EA-9B03-02108FA5C012}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlogPost", "Custom Command Handler\Custom Command Handler.vcxproj", "{201D64F0-EB85-46EA-9B03-02108FA5C012}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlogPost Server", "BlogPost Server\BlogPost Server.vcxproj", "{784A2167-12DE-489A-9604-54C0CE2FCF2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{201D64F0-EB85-46EA-9B03-02108FA5C012}.Release|x64.Build.0 = Release|x64
 		{201D64F0-EB85-46EA-9B03-02108FA5C012}.Release|x86.ActiveCfg = Release|Win32
 		{201D64F0-EB85-46EA-9B03-02108FA5C012}.Release|x86.Build.0 = Release|Win32
+		{784A2167-12DE-489A-9604-54C0CE2FCF2A}.Debug|x64.ActiveCfg = Debug|x64
+		{784A2167-12DE-489A-9604-54C0CE2FCF2A}.Debug|x64.Build.0 = Debug|x64
+		{784A2167-12DE-489A-9604-54C0CE2FCF2A}.Debug|x86.ActiveCfg = Debug|Win32
+		{784A2167-12DE-489A-9604-54C0CE2FCF2A}.Debug|x86.Build.0 = Debug|Win32
+		{784A2167-12DE-489A-9604-54C0CE2FCF2A}.Release|x64.ActiveCfg = Release|x64
+		{784A2167-12DE-489A-9604-54C0CE2FCF2A}.Release|x64.Build.0 = Release|x64
+		{784A2167-12DE-489A-9604-54C0CE2FCF2A}.Release|x86.ActiveCfg = Release|Win32
+		{784A2167-12DE-489A-9604-54C0CE2FCF2A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

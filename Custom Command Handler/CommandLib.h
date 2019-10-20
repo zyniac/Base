@@ -10,6 +10,8 @@ public:
 
 	virtual void call(std::vector<std::string> args) = 0;
 
+	virtual bool highlightArgs(std::vector<std::string>& args) { return false; };
+
 	inline std::string getName() const {
 		return this->name;
 	}
@@ -77,7 +79,7 @@ public:
 		this->processArguments(lString);
 	}
 
-	static struct Couple {
+	struct Couple {
 		Couple() = default;
 		Couple(Argument arg)
 			: shortArg(arg) {}

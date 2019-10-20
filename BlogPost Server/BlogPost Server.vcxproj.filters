@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien\JSEngine">
+      <UniqueIdentifier>{2138b55e-bc9f-413e-aa0e-6b3c8e10cf34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\JSEngine\BPO">
+      <UniqueIdentifier>{c07d29b9-bbc6-41ed-9235-fb4901edefe8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ClearCommand.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandHandler.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigCommand.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitCommand.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RequestLib.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BPServer.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Custom Command Handler\WebClient.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Custom Command Handler\Configurable.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Custom Command Handler\Encryptor.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandBase.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RankSystem.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RankCommand.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="UserCommand.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WebServer.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="HTTP.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DocumentRecognition.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigGenerator.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="JSEngine.h">
+      <Filter>Headerdateien\JSEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="RunCommand.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="JSEnvBuilder.h">
+      <Filter>Headerdateien\JSEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="JSConsole.h">
+      <Filter>Headerdateien\JSEngine\BPO</Filter>
+    </ClInclude>
+    <ClInclude Include="JSAccount.h">
+      <Filter>Headerdateien\JSEngine\BPO</Filter>
+    </ClInclude>
+    <ClInclude Include="JSWebServer.h">
+      <Filter>Headerdateien\JSEngine\BPO</Filter>
+    </ClInclude>
+    <ClInclude Include="JSLauncher.h">
+      <Filter>Headerdateien\JSEngine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Icon.ico">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

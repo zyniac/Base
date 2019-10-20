@@ -1,0 +1,13 @@
+{
+    "Title": "Tutorial Blog",
+    "Description": "This is a tutorial blog",
+    "WrittenBy": "BlackLight",
+    "Picture": "titlepicture.jpeg",
+    "BlogSrc": "blog.md",
+    "Special": true,
+    "Keywords": [
+        "Cool Blog",
+        "IDK",
+        "CFS"
+    ]
+}

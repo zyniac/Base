@@ -1,0 +1,11 @@
+{
+    "MIME": {
+        "png": "image/png",
+        "html": "text/html",
+        "css": "text/css",
+        "js": "application/javascript",
+        "jpg": "image/jpg",
+        "jpeg": "image/jpeg",
+        "json": "application/json"
+    }
+}

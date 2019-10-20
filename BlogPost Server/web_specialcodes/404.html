@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404 NOT FOUND</title>
+    <style>
+        body {
+            background: #191919;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #a1a1a1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 3vw;
+            transform: translate(-50%, -50%);
+            outline: none;
+            text-transform: uppercase;
+            animation: titleanim 10s infinite steps(1, start) forwards;
+            text-shadow: 5px 3px 8px #000;
+        }
+
+        h1::before, h1::after {
+            content: '404 Not Found';
+            text-transform: uppercase;
+            overflow: hidden;
+            color: transparent;
+            top: 0;
+            left: 0;
+            position: absolute;
+            white-space: nowrap;
+            outline: none;
+            background: #242424;
+            color: #a1a1a1;
+        }
+
+        h1::before {
+            left: 3px;
+            /* text-shadow: -2px 0 red; */
+            animation: glitch-animation-1 3s infinite linear alternate-reverse;
+        }
+
+        h1::after {
+            left: -3px;
+            /* text-shadow: -2px 0 blue; */
+            animation: glitch-animation-1 2s infinite linear alternate-reverse;
+        }
+
+        h1 span {
+            color: #A04040;
+        }
+
+        p {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            color: #A04040;
+            outline: none;
+            margin: 0;
+            text-shadow: 2px 1px 2px #000;
+        }
+
+        a {
+            color: #303030;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            text-decoration: none;
+            outline: none;
+            position: fixed;
+            margin: 0;
+            transform: translateX(-50%);
+            bottom: 20px;
+            left: 50%;
+            text-transform: uppercase;
+            text-shadow: 2px 1px 5px #000;
+        }
+
+        @keyframes titleanim {
+            0% {
+                transform: translate(-50%, -50%);
+            }
+
+            2% {
+                transform: translate(calc(-50% + 1.25vh), calc(-50% + 0.75vh));
+            }
+
+            4% {
+                transform: translate(calc(-50% + 1.25vh), calc(-50% + 0.75vh));
+            }
+
+            6% {
+                transform: translate(-50%, -50%);
+            }
+
+
+            50% {
+                transform: translate(-50%, -50%);
+            }
+
+            52% {
+                transform: translate(calc(-50% - 1.25vh), calc(-50% - 0.5vh));
+            }
+
+            54% {
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        @keyframes glitch-animation-1 {
+        0% {
+            clip: rect(0.2vw, 100vw, 2.7vw, 6vw);
+        }
+        5% {
+            clip: rect(1.4vw, 100vw, 1.5vw, 6vw);
+        }
+        10% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        15% {
+            clip: rect(1.6vw, 100vw, 1.9vw, 6vw);
+        }
+        20% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        25% {
+            clip: rect(2.1, 100vw, 2.2, 6vw);
+        }
+        30% {
+            clip: rect(2.7vw, 100vw, 3vw, 6vw);
+        }
+        35% {
+            clip: rect(0.8vw, 100vw, 3vw, 6vw);
+        }
+        40% {
+            clip: rect(2.7vw, 100vw, 2.8vw, 6vw);
+        }
+        45% {
+            clip: rect(2.5vw, 100vw, 2.7vw, 6vw);
+        }
+        50% {
+            clip: rect(100vw, 100vw, 100.0vw, 6vw);
+        }
+        55% {
+            clip: rect(2.2vw, 100vw, 2.3vw, 6vw);
+        }
+        60% {
+            clip: rect(1.5vw, 100vw, 1.7vw, 6vw);
+        }
+        65% {
+            clip: rect(2.35, 100vw, 1.2, 6vw);
+        }
+        70% {
+            clip: rect(3.0vw, 100vw, 0.1vw, 6vw);
+        }
+        75% {
+            clip: rect(2.5vw, 100vw, 0.3vw, 6vw);
+        }
+        80% {
+            clip: rect(0.2vw, 100vw, 1.5vw, 6vw);
+        }
+        85% {
+            clip: rect(1.2vw, 100vw, 2.7vw, 6vw);
+        }
+        90% {
+            clip: rect(2.4vw, 100vw, 1.2vw, 6vw);
+        }
+        95% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        100% {
+            clip: rect(1.2vw, 100vw, 2.9vw, 6vw);
+        }
+        }
+
+        @keyframes glitch-animation-2 {
+        0% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        5% {
+            clip: rect(2.1vw, 100vw, 1.5vw, 6vw);
+        }
+        10% {
+            clip: rect(3.0vw, 100vw, 1.1vw, 6vw);
+        }
+        15% {
+            clip: rect(0.5vw, 100vw, 1.5vw, 6vw);
+        }
+        20% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        25% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        30% {
+            clip: rect(1.6vw, 100vw, 2.1vw, 6vw);
+        }
+        35% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        40% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        45% {
+            clip: rect(2.6vw, 100vw, 0.1vw, 6vw);
+        }
+        50% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        55% {
+            clip: rect(1.3vw, 100vw, 1.4vw, 6vw);
+        }
+        60% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        65% {
+            clip: rect(2.1vw, 100vw, 2.0vw, 6vw);
+        }
+        70% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        75% {
+            clip: rect(1.2vw, 100vw, 1.3vw, 6vw);
+        }
+        80% {
+            clip: rect(2.1vw, 100vw, 0.5vw, 6vw);
+        }
+        85% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        90% {
+            clip: rect(2.4vw, 100vw, 1.7vw, 6vw);
+        }
+        95% {
+            clip: rect(3vw, 100vw, 1.0vw, 6vw);
+        }
+        100% {
+            clip: rect(100vw, 100vw, 100vw, 6vw);
+        }
+        }
+
+        
+    </style>
+    <script type="text/javascript">
+        document.onclick = function() {
+            window.location = ".";
+        };
+    </script>
+</head>
+<body>
+    <h1><span>404</span> Not found</h1>
+    <p>Cannot find requested site.</p>
+    <a href=".">Get back to main page</a>
+</body>
+</html>

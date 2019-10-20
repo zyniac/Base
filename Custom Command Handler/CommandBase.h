@@ -1,9 +1,18 @@
 #pragma once
 #include "CommandHandler.h"
+#include "CommandLib.h"
 #include <iostream>
+#include <conio.h>
+#include "extern/rlutil.h"
+#include "Configurable.h"
+#include "ConfigCommand.h"
+#include <iomanip>
+#include "ConsoleHandler.h"
 
 #define SUBCOMMAND_NF "Subcommand not found"
 #define COMMAND_NF "Command not found"
+
+std::vector<std::string> commandsExecutedBefore;
 
 void RunCmdBase(const CommandHandler& hCmd, int argc, char** argv) {
 	Command* cmd;
@@ -15,8 +24,14 @@ void RunCmdBase(const CommandHandler& hCmd, int argc, char** argv) {
 		{
 			input = "";
 			char c;
-			while ((c = std::cin.get()) != '\n') {
-				input += c;
+			if (Configurable::getBool(ConfigData::dict["settings"]["custom_commandline"])) {
+				input = ConsoleHandler::getLineCommandHighlightConsole(hCmd);
+			}
+			else {
+				rlutil::setCursorVisibility(10);
+				while ((c = std::cin.get()) != '\n') {
+					input += c;
+				}
 			}
 			std::vector<std::string> args = _split(input, " ");
 			cmd = hCmd.getCommand(args[0].c_str());

@@ -1,0 +1,141 @@
+main #main-content .item-main-newest {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #707070;
+    cursor: pointer;
+}
+
+main #main-content .item-main-newest .image {
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+main #main-content .item-main-newest .overlay, main #main-content .main-item-section .item-main .container .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #262626A5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s ease background-color;
+}
+
+main #main-content .item-main-newest:hover .overlay,
+main #main-content .main-item-section .item-main .container:hover .overlay {
+    background-color: #26262A90;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+main #main-content .placeholder-1 {
+    width: 100%;
+    height: calc(30px + 1.5vw);
+}
+
+main #main-content .placeholder-2 {
+    height: 75px;
+    width: 100%;
+}
+
+main #main-content .item-main-newest .overlay .info-box,
+main #main-content .main-item-section .item-main .container .overlay .info-box {
+    position: absolute;
+    bottom: 5vw;
+    left: 5vw;
+    width: 40vw;
+}
+
+main #main-content .item-main-newest .overlay .info-box .title,
+main #main-content .main-item-section .item-main .container .overlay .info-box .title {
+    font-family: Economica;
+    color: #B0B0B0;
+    font-family: "Economica";
+    font-size: calc(12px + 1.2vw);
+    letter-spacing: 1px;
+    margin: 0 0 0.75vw 0;
+}
+
+main #main-content .item-main-newest .overlay .info-box .writtenby,
+main #main-content .main-item-section .item-main .container .overlay .info-box .writtenby {
+    font-family: Economica;
+    font-size: calc(7px + 0.6vw);
+    margin: 0;
+    color: #1CAD72;
+}
+
+main #main-content .item-main-newest .overlay .info-box .description,
+main #main-content .main-item-section .item-main .container .overlay .info-box .description {
+    font-family: Economica;
+    font-size: calc(8px + 1.0vw);
+    color: #B0B0B0;
+    margin: 0;
+}
+
+main #main-content .main-item-section {
+    width: 100%;
+    display: flex;
+    pointer-events: none;
+}
+
+main #main-content .main-item-section .item-main {
+    width: 50%;
+    height: 30vw;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+}
+
+main #main-content .main-item-section .item-main .container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 95%;
+    height: 90%;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid #707070;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+main #main-content .main-item-section .item-main:nth-child(2) .container {
+    right: 0;
+}
+
+main #main-content .main-item-section .item-main .container .image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Extra Responsive Items */
+@media (max-width: 690px) {
+    .placeholder-1 {
+        height: 25px;
+    }
+
+    main #main-content .main-item-section {
+        display: block;
+    }
+
+    main #main-content .main-item-section .item-main {
+        width: unset;
+        height: unset;
+        margin-bottom: 25px;
+    }
+
+    main #main-content .main-item-section .item-main .container {
+        width: unset;
+        position: relative;
+        height: unset;
+        transform: none;
+    }
+
+    main #main-content .main-item-section .item-main .container .image {
+        width: 100%;
+        height: 50vw;
+    }
+}

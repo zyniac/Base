@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import './colors';
+$blogFont: 'Roboto';
+
+@mixin hE($size) {
+    color: $highlight;
+    font-size: $size;
+    margin: 0 0 $size / 2 0;
+    font-weight: 400;
+    font-family: $blogFont;
+    user-select: none;
+}
+
+main #main-content {
+    .header {
+        width: 100%;
+        height: 7vh;
+        background: $darkBackground;
+        border: 1px solid $darkLineColor;
+
+        .title {
+            margin: 0 0 0 2.5vw;
+            line-height: 7vh;
+            font-family: Teko;
+            font-size: 2vh;
+            color: rgba($highlight, .9);
+            font-weight: 300;
+            font-family: Roboto;
+        }
+    }
+
+    .blog-block {
+        width: 70%;
+        background: $darkBackground;
+        border: 1px solid $darkLineColor;
+        box-sizing: border-box;
+        display: inline-block;
+        box-sizing: border-box;
+
+        .blog-holder {
+            margin: 3vh 2vw 3vh 2.5vw;
+
+            .blog-text {
+                margin: 0;
+                font-family: Economica;
+
+                // Blog Elements
+
+                .text {
+                    color: $brightFont;
+                    font-size: 1.3vw;
+                    margin: 0;
+                }
+
+                h1 {
+                    @include hE(calc(15px + 0.9vw));
+                }
+
+                h2 {
+                    @include hE(calc(13px 0.8vw));
+                }
+
+                h3 {
+                    @include hE(calc(11px + 0.5vw));
+                }
+
+                h4 {
+                    @include hE(calc(15px + 0.9vw));
+                    color: $brightFont;
+                }
+
+                h5 {
+                    @include hE(calc(13px 0.8vw));
+                    color: $brightFont;
+                }
+
+                h6 {
+                    @include hE(calc(11px + 0.5vw));
+                    color: $brightFont;
+                }
+
+                p {
+                    font-size: calc(12px + 0.4vw);
+                    color: $brightFont;
+                    font-family: $blogFont;
+                    line-height: 150%;
+                    user-select: none;
+                }
+
+                ul li {
+                    color: $brightFont;
+                    font-size: calc(12px + 0.4vw);
+                    font-family: $blogFont;
+                }
+
+                ol li {
+                    color: rgba($highlight, .9);
+                    font-size: calc(12px + 0.4vw);
+                    font-family: $blogFont;
+                }
+
+                li li {
+                    font-size: calc(10px + 0.3vw);
+                }
+
+                p code {
+                    font-size: calc(12px + 0.4vw);
+                    color: $brightFont;
+                    background: #262626;
+                    font-family: $blogFont;
+                    user-select: text;
+                }
+
+                img {
+                    min-width: 10%;
+                    max-width: 100%;
+                    min-height: 50px;
+                    max-height: 700px;
+                    object-fit: cover;
+                    filter: brightness(50%);
+                    border-radius: 4px;
+                }
+
+                a {
+                    font-size: calc(12px + 0.4vw);
+                    color: $brightFont;
+                    font-family: $blogFont;
+                    user-select: none;
+                }
+
+                blockquote {
+                    position: relative;
+                    margin-left: 0;
+                    padding-left: 15px;
+                    background: #1F1F1F;
+                }
+
+                blockquote::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 5px;
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    background: #303030;
+                }
+
+                blockquote p {
+                    color: #AcAcAc;
+                    user-select: text;
+                }
+
+                iframe {
+                    width: 100%;
+                }
+
+            }
+        }
+    }
+
+    .other-posts {
+        width: calc(30% - 30px);
+        background: $darkBackground;
+        border: 1px solid $darkLineColor;
+        box-sizing: border-box;
+        position: relative;
+        float: right;
+        margin-bottom: 50px;
+        overflow: hidden;
+        user-select: none;
+
+        .post {
+            margin: auto;
+            height: 30vh;
+            position: relative;
+            cursor: pointer;
+            //border-bottom: 1px solid $darkLineColor;
+            
+            &:last-child {
+                border-bottom: none;
+            }
+            
+            .image-holder {
+                position: relative;
+                width: 100%;
+                height: 30vh;
+                pointer-events: none;
+                .image {
+                    width: 100%;
+                    object-fit: cover;
+                    height: 30vh;
+                    filter: grayscale(100%);
+                }
+
+                .overlay {
+                    background: #1F1F1FF0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+
+                    .info-box {
+                        position: absolute;
+                        left: 10%;
+                        bottom: 10%;
+                        font-family: Economica;
+
+                        .written-by {
+                            font-size: 13px;
+                            color: $highlight;
+                            margin: 0;
+                        }
+
+                        .title {
+                            font-size: 18px;
+                            color: $brightFont;
+                            margin: 0;
+                        }
+
+                        .description {
+                            font-size: 15px;
+                            color: $brightFont;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .placeholder-1 {
+        width: 100%;
+        height: 50px;
+    }
+
+    .placeholder-2 {
+        width: 100%;
+        height: 25px;
+    }
+}
+
+@media (max-width: 690px) {
+    
+}
+
+@media (max-width: 1200px) {
+    main #main-content .blog-block {
+        width: 100%;
+    }
+
+    main #main-content .other-posts {
+        float: unset;
+        width: 100%;
+        margin-top: 50px;
+        display: none;
+
+        .post {
+            height: 20vw;
+
+            .image-holder .image {
+                height: 20vw;
+            }
+        }
+    }
+}

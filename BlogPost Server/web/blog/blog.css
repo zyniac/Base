@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+main #main-content .header {
+  width: 100%;
+  height: 7vh;
+  background: #1C1C1C;
+  border: 1px solid #101010;
+}
+
+main #main-content .header .title {
+  margin: 0 0 0 2.5vw;
+  line-height: 7vh;
+  font-family: Teko;
+  font-size: 2vh;
+  color: rgba(28, 173, 114, 0.9);
+  font-weight: 300;
+  font-family: Roboto;
+}
+
+main #main-content .blog-block {
+  width: 70%;
+  background: #1C1C1C;
+  border: 1px solid #101010;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+main #main-content .blog-block .blog-holder {
+  margin: 3vh 2vw 3vh 2.5vw;
+}
+
+main #main-content .blog-block .blog-holder .blog-text {
+  margin: 0;
+  font-family: Economica;
+}
+
+main #main-content .blog-block .blog-holder .blog-text .text {
+  color: #909090;
+  font-size: 1.3vw;
+  margin: 0;
+}
+
+main #main-content .blog-block .blog-holder .blog-text h1 {
+  color: #1CAD72;
+  font-size: calc(15px + 0.9vw);
+  margin: 0 0 calc(15px + 0.9vw)/2 0;
+  font-weight: 400;
+  font-family: "Roboto";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main #main-content .blog-block .blog-holder .blog-text h2 {
+  color: #1CAD72;
+  font-size: calc(13px 0.8vw);
+  margin: 0 0 calc(13px 0.8vw)/2 0;
+  font-weight: 400;
+  font-family: "Roboto";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main #main-content .blog-block .blog-holder .blog-text h3 {
+  color: #1CAD72;
+  font-size: calc(11px + 0.5vw);
+  margin: 0 0 calc(11px + 0.5vw)/2 0;
+  font-weight: 400;
+  font-family: "Roboto";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main #main-content .blog-block .blog-holder .blog-text h4 {
+  color: #1CAD72;
+  font-size: calc(15px + 0.9vw);
+  margin: 0 0 calc(15px + 0.9vw)/2 0;
+  font-weight: 400;
+  font-family: "Roboto";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #909090;
+}
+
+main #main-content .blog-block .blog-holder .blog-text h5 {
+  color: #1CAD72;
+  font-size: calc(13px 0.8vw);
+  margin: 0 0 calc(13px 0.8vw)/2 0;
+  font-weight: 400;
+  font-family: "Roboto";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #909090;
+}
+
+main #main-content .blog-block .blog-holder .blog-text h6 {
+  color: #1CAD72;
+  font-size: calc(11px + 0.5vw);
+  margin: 0 0 calc(11px + 0.5vw)/2 0;
+  font-weight: 400;
+  font-family: "Roboto";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #909090;
+}
+
+main #main-content .blog-block .blog-holder .blog-text p {
+  font-size: calc(12px + 0.4vw);
+  color: #909090;
+  font-family: "Roboto";
+  line-height: 150%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main #main-content .blog-block .blog-holder .blog-text ul li {
+  color: #909090;
+  font-size: calc(12px + 0.4vw);
+  font-family: "Roboto";
+}
+
+main #main-content .blog-block .blog-holder .blog-text ol li {
+  color: rgba(28, 173, 114, 0.9);
+  font-size: calc(12px + 0.4vw);
+  font-family: "Roboto";
+}
+
+main #main-content .blog-block .blog-holder .blog-text li li {
+  font-size: calc(10px + 0.3vw);
+}
+
+main #main-content .blog-block .blog-holder .blog-text p code {
+  font-size: calc(12px + 0.4vw);
+  color: #909090;
+  background: #262626;
+  font-family: "Roboto";
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+}
+
+main #main-content .blog-block .blog-holder .blog-text img {
+  min-width: 10%;
+  max-width: 100%;
+  min-height: 50px;
+  max-height: 700px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+  border-radius: 4px;
+}
+
+main #main-content .blog-block .blog-holder .blog-text a {
+  font-size: calc(12px + 0.4vw);
+  color: #909090;
+  font-family: "Roboto";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main #main-content .blog-block .blog-holder .blog-text blockquote {
+  position: relative;
+  margin-left: 0;
+  padding-left: 15px;
+  background: #1F1F1F;
+}
+
+main #main-content .blog-block .blog-holder .blog-text blockquote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #303030;
+}
+
+main #main-content .blog-block .blog-holder .blog-text blockquote p {
+  color: #AcAcAc;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+}
+
+main #main-content .blog-block .blog-holder .blog-text iframe {
+  width: 100%;
+}
+
+main #main-content .other-posts {
+  width: calc(30% - 30px);
+  background: #1C1C1C;
+  border: 1px solid #101010;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  float: right;
+  margin-bottom: 50px;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main #main-content .other-posts .post {
+  margin: auto;
+  height: 30vh;
+  position: relative;
+  cursor: pointer;
+}
+
+main #main-content .other-posts .post:last-child {
+  border-bottom: none;
+}
+
+main #main-content .other-posts .post .image-holder {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  pointer-events: none;
+}
+
+main #main-content .other-posts .post .image-holder .image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 30vh;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+main #main-content .other-posts .post .image-holder .overlay {
+  background: #1F1F1FF0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main #main-content .other-posts .post .image-holder .overlay .info-box {
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+  font-family: Economica;
+}
+
+main #main-content .other-posts .post .image-holder .overlay .info-box .written-by {
+  font-size: 13px;
+  color: #1CAD72;
+  margin: 0;
+}
+
+main #main-content .other-posts .post .image-holder .overlay .info-box .title {
+  font-size: 18px;
+  color: #909090;
+  margin: 0;
+}
+
+main #main-content .other-posts .post .image-holder .overlay .info-box .description {
+  font-size: 15px;
+  color: #909090;
+  margin: 0;
+}
+
+main #main-content .placeholder-1 {
+  width: 100%;
+  height: 50px;
+}
+
+main #main-content .placeholder-2 {
+  width: 100%;
+  height: 25px;
+}
+
+@media (max-width: 1200px) {
+  main #main-content .blog-block {
+    width: 100%;
+  }
+  main #main-content .other-posts {
+    float: unset;
+    width: 100%;
+    margin-top: 50px;
+    display: none;
+  }
+  main #main-content .other-posts .post {
+    height: 20vw;
+  }
+  main #main-content .other-posts .post .image-holder .image {
+    height: 20vw;
+  }
+}
+/*# sourceMappingURL=blog.css.map */
