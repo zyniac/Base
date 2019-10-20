@@ -159,17 +159,6 @@ namespace WebServer {
 		return realpath;
 	}
 
-	void GetDataForUser(WebExchange::Webpacket packet) {
-
-	}
-
-	std::string callJSEngines(std::string realpath)
-	{
-		// Server will create extern objects and this will go through this. When object found, this will call the event listener and
-		// get the private objects.
-		return "";
-	}
-
 	void HandleUserRequest(SOCKET client) {
 		WebExchange exch(client);
 		WebExchange::Webpacket packet;

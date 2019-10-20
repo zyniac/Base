@@ -61,3 +61,21 @@ Commands are getting the same way executed but the user only needs to type the s
 **Command in simulated console**
 
 ``test --test argument``
+
+# Zyniac
+Zyniac is an open source tool for hosting data. It has a good plugin support and runs on Windows and Linux but it should run on Mac as well.
+
+> Currently Zyniac is in developement and not every Feature is fully ready.
+
+## How to build Zyniac?
+Zyniac was built in Visual Studio. Right now there is no cmake configuration but we will work on it in the future.
+Because of that Zyniac can only build on Windows at the monment.
+
+First, the Mozilla Firefox build is needed because Spidermonkey is embedded in Zyniac (It is the plugin engine that executes the js files). The build folder must be in the C drive, else the project won't find the required includes for SpiderMonkey.
+
+Rapid Json, Cereal and rlutil are also needed but they are already included in the workspace.
+
+After that, use the Github extension in Visual Studio to clone this project. After this, the project should run but I suggest to look if all the include paths and library paths are setup correctly on your device.
+
+## How does Zyniac run?
+Zyniac has it's own servers, protocols, crypt technologies and file handlers and because of that it runs faster and has only the tools that it needs. With the extensions almost everything can be build and because of that there are almost no limits (examples: more commands for servers and clients, other servers, crypt technologies, databases). Zyniac is fully build in c++ and it is a header only project.

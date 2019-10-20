@@ -1,9 +1,5 @@
 #pragma once
 
-// Multi Platform Netcode.
-// Copyright @2019 Bl4ckL1ght
-// Licensed with Apache 2.0
-
 #define WEB_BUFFER_SIZE 4096
 
 #ifdef _WIN32
