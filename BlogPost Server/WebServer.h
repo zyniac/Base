@@ -5,7 +5,7 @@
 #include <future>
 #include <iostream>
 #include <CommandLib.h>
-#include <experimental/filesystem>
+#include <filesystem>
 #include <fstream>
 #include <sys/stat.h>
 #include <iterator>
@@ -43,14 +43,22 @@ namespace {
 }
 
 namespace WebServer {
-	void JSEngineBlock(std::string realpath, std::promise<bool> ret)
+	void JSEngineBlock(std::string realpath, std::promise<bool> ret, std::promise<std::string> content, std::promise<std::string> mime)
 	{
 		if (JSEngine::Extern::WebServerCallMap.count(realpath))
 		{
 			std::pair<JSContext*, JSFunction*>& pair = JSEngine::Extern::WebServerCallMap[realpath];
+			JS::RootedObject eventObj(pair.first, JSEngine::Extern::createWebEventObject(pair.first));
 			JS::RootedFunction func(pair.first, pair.second);
 			JS::RootedValue rval(pair.first);
-			JS_CallFunction(pair.first, nullptr, func, JS::HandleValueArray::empty(), &rval);
+			JS::AutoValueArray<1> args(pair.first);
+			args[0].setObject(*eventObj);
+			JS_CallFunction(pair.first, nullptr, func, args, &rval);
+
+			JSEngine::WebServer::WebEventData* wed = reinterpret_cast<JSEngine::WebServer::WebEventData*>(JS_GetPrivate(eventObj));
+			
+			content.set_value(wed->content);
+			mime.set_value(wed->mime);
 			if (rval.isBoolean())
 			{
 				ret.set_value(rval.toBoolean());
@@ -176,8 +184,12 @@ namespace WebServer {
 
 			std::cout << realpath << std::endl;
 			std::promise<bool> jsRet;
+			std::promise<std::string> jsContent;
+			std::promise<std::string> jsMime;
 			auto jsRetVal = jsRet.get_future();
-			std::thread jsThread(&JSEngineBlock, realpath, std::move(jsRet)); // TODO Repair Thread
+			auto jsContentRet = jsContent.get_future();
+			auto jsMimeRet = jsMime.get_future();
+			std::thread jsThread(&JSEngineBlock, realpath, std::move(jsRet), std::move(jsContent), std::move(jsMime)); // TODO Repair Thread
 
 			HTTPSendInformation response;
 
@@ -192,7 +204,6 @@ namespace WebServer {
 				contentType = "text/plain";
 			}
 			HTTPWriteProtocol writer;
-			writer.AddArgument("Content-Type", (contentType + "; charset=utf-8").c_str());
 			writer.AddArgument("Server", "BlogPost");
 			writer.AddArgument("Accept-Ranges", "bytes");
 			bool keepSending = false;
@@ -224,12 +235,12 @@ namespace WebServer {
 			jsThread.join();
 			if (jsRetVal.get())
 			{
-				response.data = "use js value later";
+				response.data = jsContentRet.get();
+				contentType = jsMimeRet.get();
 			}
-			else
-			{
-				writer.AddArgument("Content-Length", std::to_string(response.data.size()).c_str());
-			}
+			writer.AddArgument("Content-Type", (contentType + "; charset=utf-8").c_str());
+
+			writer.AddArgument("Content-Length", std::to_string(response.data.size()).c_str());
 
 			writer.Create(data, response);
 

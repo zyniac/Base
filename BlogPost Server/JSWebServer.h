@@ -11,6 +11,23 @@ namespace JSEngine
 	namespace Extern
 	{
 		std::map<std::string, std::pair<JSContext*, JSFunction*>> WebServerCallMap; // First string = path, second string = event type
+
+		JSObject* createWebEventObject(JSContext* cx)
+		{
+			JS::RootedValue constructor_val(cx);
+			JS::RootedObject global(cx, JS::CurrentGlobalOrNull(cx));
+			if (!JS_GetProperty(cx, global, "WebEvent", &constructor_val))
+				return false;
+
+			if (!constructor_val.isObject())
+			{
+				JS_ReportErrorASCII(cx, "Program could not find an important constructor.");
+				return false;
+			}
+			JS::RootedObject constructor(cx, &constructor_val.toObject());
+			JS::RootedObject obj(cx, JS_New(cx, constructor, JS::HandleValueArray::empty()));
+			return obj;
+		}
 	}
 
 	namespace WebServer
@@ -51,11 +68,13 @@ namespace JSEngine
 
 		struct WebEventData
 		{
-
+			std::string content = "";
+			std::string mime = "text/html";
 		};
 
 		void WebEventFinalize(JSFreeOp* fop, JSObject* obj)
 		{
+			std::cout << "Destroyed EventObject" << std::endl;
 			WebEventData* wed = reinterpret_cast<WebEventData*>(JS_GetPrivate(obj));
 			delete wed;
 		}
@@ -146,6 +165,27 @@ namespace JSEngine
 			JS::RootedObject obj(cx, JS_NewObjectForConstructor(cx, &WebEvent, args));
 			JS_SetPrivate(obj, wed);
 			args.rval().setObject(*obj);
+			std::cout << "Created EventObject" << std::endl;
+			return true;
+		}
+
+		bool WebEventSetContent(JSContext* cx, unsigned argc, JS::Value* vp)
+		{
+			JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+			if (args.length() != 1) return false;
+			if (!args[0].isString()) return false;
+			WebEventData* wed = reinterpret_cast<WebEventData*>(JS_GetPrivate(&args.thisv().toObject()));
+			wed->content = std::move(JS_EncodeString(cx, args[0].toString()));
+			return true;
+		}
+
+		bool WebEventSetMIME(JSContext* cx, unsigned argc, JS::Value* vp)
+		{
+			JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+			if (args.length() != 1) return false;
+			if (!args[0].isString()) return false;
+			WebEventData* wed = reinterpret_cast<WebEventData*>(JS_GetPrivate(&args.thisv().toObject()));
+			wed->mime = std::move(JS_EncodeString(cx, args[0].toString()));
 			return true;
 		}
 
@@ -161,8 +201,15 @@ namespace JSEngine
 				{"addEventListener", &WebContentAddEventListener, 0, 0}
 			};
 
+			static JSFunctionSpec wefs[] =
+			{
+				{"setContent", &WebEventSetContent, 0, 0},
+				{"setMIME", &WebEventSetMIME, 0, 0}
+			};
+
 			JS::RootedObject webContent(ei->cx, JS_InitClass(ei->cx, ei->global, nullptr, &WebContent, &WebContentConstruct, 0, nullptr, wcfs, nullptr, nullptr));
 			JS::RootedObject webServer(ei->cx, JS_InitClass(ei->cx, ei->global, nullptr, &WebServer, &WebServerConstruct, 0, nullptr, nullptr, nullptr, sfsp));
+			JS::RootedObject webEvent(ei->cx, JS_InitClass(ei->cx, ei->global, nullptr, &WebEvent, &WebEventConstruct, 0, nullptr, wefs, nullptr, nullptr));
 			return webContent != nullptr && webServer != nullptr;
 		}
 	}

@@ -6,7 +6,13 @@ console.writeLine("Plugin " + PLUGIN_NAME + " loaded.");
 
 const content = WebServer.registerContent('web/index.html');
 const dt = "different Thread";
-content.addEventListener('call', function() {
+
+let i = 0;
+
+content.addEventListener('call', function(event) {
+    i++;
     console.log("Point in Javascript in " + dt + " reached");
-    return false;
+    event.setContent("test content: " + i);
+    event.setMIME("text/plain");
+    return true;
 });

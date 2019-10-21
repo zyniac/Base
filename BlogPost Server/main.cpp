@@ -49,8 +49,6 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 // Adding filesystem to project
 #if __has_include("filesystem")
 #include <filesystem>
-#elif __has_include("experimental/filesystem")
-#include <experimental/filesystem>
 #endif
 
 namespace fs = std::filesystem;
